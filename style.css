@@ -1,4 +1,6 @@
 html, body {
   margin: 0;
   background: rgb(27,27,27);
+  color: white;
+  font-family: sans-serif;
 }
