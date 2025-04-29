@@ -1,6 +1,55 @@
-html, body {
+:root {
+  --gray: #1b1b1b;
+  --white: #ffffff;
+}
+
+html,
+body {
   margin: 0;
-  background: rgb(27,27,27);
-  color: white;
+  background: var(--gray);
+  color: var(--white);
   font-family: sans-serif;
+}
+
+a {
+  color: inherit;
+  font-style: normal;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-weight: 100;
+  font-style: normal;
+  color: var(--white);
+}
+
+#mainTitle {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.centerContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  gap: 1rem;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.projectBox {
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.projectTitle {
+  text-align: center;
 }
