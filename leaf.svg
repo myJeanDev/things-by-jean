@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: white;
+                stroke-width: 0px;
+                fill-rule: evenodd;
+            }
+
+        </style>
+    </defs>
+    <path id="leaf_1" data-name="leaf 1" class="cls-1" d="M46.529,266.3S-17.73,190.123,86.9,106.016c61.937-49.786,143.566-78.7,184.315-69.26,0,0,22.839,102.876-95.668,213.717C175.549,250.473,117.554,311.54,46.529,266.3Z" />
+</svg>

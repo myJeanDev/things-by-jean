@@ -1,6 +1,6 @@
 :root {
-  --gray: #1b1b1b;
-  --white: #ffffff;
+  --gray: #e5e2d2;
+  --white: #2e2e2e;
 }
 
 html,
@@ -8,7 +8,8 @@ body {
   margin: 0;
   background: var(--gray);
   color: var(--white);
-  font-family: sans-serif;
+  font-family: monospace;
+  overflow: hidden;
 }
 
 a {
@@ -39,17 +40,29 @@ h2 {
 }
 
 .projectGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   gap: 10px;
 }
 
 .projectBox {
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
   border-radius: 10px;
-  border: 1px solid white;
+  border: 2px solid var(--white);
   padding: 10px;
+  background: var(--gray);
+  z-index: 1;
 }
 
 .projectTitle {
   text-align: center;
+}
+
+.svgLeaf{
+  filter:invert(0.5);
+}
+
+.orangeSpan{
+  color:orange;
 }
