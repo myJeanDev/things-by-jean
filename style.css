@@ -9,7 +9,9 @@ body {
   background: var(--gray);
   color: var(--white);
   font-family: monospace;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
 }
 
 a {
@@ -26,8 +28,10 @@ h2 {
 }
 
 #mainTitle {
-  font-size: 4rem;
+  margin-top: 2rem;
+  display: block;
   text-align: center;
+  font-size: 4rem;
 }
 
 .centerContainer {
@@ -35,34 +39,87 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;
+  margin: 1rem;
   gap: 1rem;
 }
 
 .projectGrid {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   gap: 10px;
+  margin: 1rem;
 }
 
 .projectBox {
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  min-width: 30rem;
+  font-size: 4rem;
+  font-weight: 100;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   border: 2px solid var(--white);
-  padding: 10px;
   background: var(--gray);
   z-index: 1;
+}
+
+.projectBox:hover {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
+  background: var(--white);
+  color: var(--gray);
 }
 
 .projectTitle {
   text-align: center;
 }
 
-.svgLeaf{
-  filter:invert(0.5);
+.fallingEmoji {
+  position: absolute;
+  font-size: 40px;
+  line-height: 1;
+  user-select: none;
+  will-change: transform;
 }
 
-.orangeSpan{
-  color:orange;
+.orangeSpan {
+  color: orange;
+}
+
+.projectBox .smallText {
+  opacity: 0%;
+  transition: opacity 0.3s ease;
+}
+
+.projectBox:hover .smallText {
+  opacity: 50%;
+}
+
+.smallText {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.preventSelect {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+@media only screen and (max-width: 600px) {
+  #mainTitle {
+    font-size: 3rem;
+  }
+
+  .projectBox {
+    font-size: 1.5rem;
+    min-width: 20rem;
+  }
 }

@@ -1,0 +1,249 @@
+:root {
+    --gray: #e5e2d2;
+    --white: #2e2e2e;
+}
+
+.itchIOGameEmbed {
+    background: transparent;
+    border-radius: 12px;
+    border: 2px solid var(--white);
+    overflow: hidden;
+}
+
+iframe {
+    background: transparent;
+}
+
+.projectGrid>* {
+    height: 100%;
+    overflow: auto;
+}
+
+.fword {
+    background-image: url('thumbnails/fword-main-title.png');
+}
+
+.squidGame {
+    background-image: url('thumbnails/SquidGame.gif');
+}
+
+.limbsPlus {
+    background-image: url('thumbnails/limbsPlus.png');
+}
+
+.soItBegins {
+    background-image: url('thumbnails/soItBegins.png');
+}
+
+.deadAir {
+    background-image: url('thumbnails/deadAir.png');
+}
+
+.squink {
+    background-image: url('thumbnails/squink.png');
+}
+
+.gameWrapper .stickyNote {
+    opacity: 0%;
+    transition: transform 0.3s cubic-bezier(1, 0, 0, 1), opacity 0.3s ease;
+    transform: rotate(0deg);
+}
+
+.gameWrapper:hover .stickyNote {
+    display: block;
+    opacity: 100%;
+}
+
+.thumbnailButton {
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    border: 3px solid var(--white);
+}
+
+.gamePlatformIcon {
+    position: relative;
+    z-index: 3;
+    float: right;
+    font-size: 2.5rem;
+    margin: 0.6rem;
+    color: var(--white);
+}
+
+.shadowBoxNoHover {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.shadowBox {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.shadowBox:hover {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+.stickyNote {
+    pointer-events: none;
+    z-index: 4;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background: #faef28;
+    background: linear-gradient(180deg, rgba(250, 239, 40, 1) 18%, rgba(255, 255, 0, 1) 18%);
+}
+
+.stickyNoteWords {
+    position: inherit;
+    margin: 3rem 1rem 1rem 1rem;
+    transform: rotate(1.5deg);
+}
+
+.centerContainer {
+    margin: 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projectGrid {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+}
+
+.gameWrapper {
+    overflow: visible;
+    position: relative;
+    margin: 0.5rem;
+    height: 100%;
+    width: calc(100% - 1rem);
+}
+
+.gameDisplayBox {
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    border: 3px solid var(--white);
+    background-size: cover;
+    background-position: center 0%;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+}
+
+.stickyNote {
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 4;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    height: 200px;
+    width: 80%;
+    max-width: 200px;
+    background: #faef28;
+    background: linear-gradient(180deg, rgba(250, 239, 40, 1) 18%, rgba(255, 255, 0, 1) 18%);
+}
+
+@media screen and (max-width: 768px) {
+    .projectGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .gameDisplayBox {
+        height: 180px;
+    }
+
+    .stickyNote {
+        width: 90%;
+        max-width: 180px;
+        height: 180px;
+    }
+
+    .stickyNoteWords {
+        margin: 2rem 0.8rem 0.8rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .gamePlatformIcon {
+        font-size: 1.5rem;
+        margin: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .centerContainer {
+        margin: 0.5rem;
+    }
+
+    .projectGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .gameDisplayBox {
+        height: 160px;
+    }
+}
+
+.randRot1 {
+    transform: rotate(1deg);
+}
+
+.randRot2 {
+    transform: rotate(-4deg);
+}
+
+.randRot3 {
+    transform: rotate(5deg);
+}
+
+.randRot4 {
+    transform: rotate(7deg);
+}
+
+.randRot5 {
+    transform: rotate(-7deg);
+}
+
+.randRot6 {
+    transform: rotate(10deg);
+}
+
+.randRot7 {
+    transform: rotate(-10deg);
+}
+
+.stickyNoteRand1 {
+    left: 45%;
+    top: 40%;
+}
+
+.gameWrapper:hover .stickyNoteRand1 {
+    display: block;
+    opacity: 100%;
+    transform: rotate(-1deg);
+}
+
+.stickyNoteRand2 {
+    left: 40%;
+    top: 55%;
+}
+
+.gameWrapper:hover .stickyNoteRand2 {
+    display: block;
+    opacity: 100%;
+    transform: rotate(2deg);
+}
+
+.stickyNoteRand3 {
+    left: 50%;
+    top: 60%;
+}
+
+.gameWrapper:hover .stickyNoteRand3 {
+    display: block;
+    opacity: 100%;
+    transform: rotate(-4deg);
+}
