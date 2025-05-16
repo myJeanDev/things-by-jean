@@ -21,16 +21,35 @@ function createEmoji() {
     const emoji = document.createElement('div');
     emoji.classList.add('fallingEmoji');
     emoji.textContent = getRandomEmoji();
+    const distance = getRandomBetween(0, 1);
+    const minSpeed = 0.05;
+    const maxSpeed = 0.3;
+    const speedMultiplier = 1 - (distance * 0.9);
+    const speed = getRandomBetween(minSpeed, maxSpeed) * speedMultiplier;
 
     emoji.emojiData = {
-        scale: getRandomBetween(0.8, 1.5),
-        speed: getRandomBetween(0.05, 0.3),
-        rotationSpeed: getRandomBetween(0.5, 3),
+        distance: distance,
+        scale: getRandomBetween(0.8, 1.0) * (2.0 - distance),
+        speed: speed,
+        rotationSpeed: getRandomBetween(0.1, 0.5),
         rotationDirection: Math.random() > 0.5 ? 1 : -1,
         rotation: 0
     };
 
     return emoji;
+}
+
+function updateEmojiStyle(emoji) {
+    const data = emoji.emojiData;
+    const opacity = 1.0 - (data.distance * 0.2);
+    const zIndex = 10 - Math.floor(data.distance * 10);
+
+    // Apply the other styles
+    emoji.style.transform = `translate(-50%, -50%) scale(${data.scale}) rotate(${data.rotation}deg)`;
+    emoji.style.zIndex = zIndex;
+
+    emoji.style.opacity = opacity;
+    console.log(opacity);
 }
 
 function setupEmoji(x, y) {
@@ -39,11 +58,6 @@ function setupEmoji(x, y) {
     updateEmojiStyle(emoji);
     document.body.appendChild(emoji);
     return emoji;
-}
-
-function updateEmojiStyle(emoji) {
-    const data = emoji.emojiData;
-    emoji.style.transform = `translate(-50%, -50%) scale(${data.scale}) rotate(${data.rotation}deg)`;
 }
 
 function updateEmoji(emoji) {
@@ -86,7 +100,7 @@ function animateEmojis() {
 }
 
 function initialize() {
-    addEmojis(100);
+    addEmojis(40);
     animateEmojis();
     document.addEventListener('click', handleClick);
 }

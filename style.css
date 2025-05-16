@@ -35,6 +35,7 @@ h2 {
 }
 
 .centerContainer {
+  z-index: 10;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -80,6 +81,7 @@ h2 {
   font-size: 40px;
   line-height: 1;
   user-select: none;
+  pointer-events: none;
   will-change: transform;
 }
 
